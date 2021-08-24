@@ -1,54 +1,129 @@
-import React, { Nav } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+	Container,
+	createTheme,
+	Divider,
+	Grid,
+	Grow,
+	ThemeProvider,
+	Toolbar,
+	Typography,
+	IconButton,
+	Box,
+} from "@material-ui/core";
+import { GitHub, Info, ShowChart } from "@material-ui/icons";
+import HomeIcon from "@material-ui/icons/Home";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Home";
-import Blog from "./Blog";
+import myPhoto from "./linkedinimage.jpg";
+import { AppBar,WritingArea } from "./styles";
+import About from "./about";
+import { Card} from '@material-ui/core';
 
-import { AppBar, Toolbar,IconButton,Typography } from "@material-ui/core";
-import {MenuIcon} from "@material-ui/icons";
 
 export default function App() {
+	const theme = createTheme({
+		palette: {
+			primary: {
+				main: "#3f51b5",
+				light: "#757de8",
+				dark: "#002984",
+				contrastText: "#fff",
+			},
+			secondary: {
+				main: "#2196f3",
+				light: "#6ec6ff",
+				dark: "#0069c0",
+				contrastText: "#fff",
+			},
+		},
+	});
+
 	return (
 		<Router>
-			<AppBar position="static">
-				<Toolbar>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="menu"
-					>
-					</IconButton>
-					<Typography variant="h6" className={classes.title}>
-						News
-					</Typography>
-					<Button color="inherit">Login</Button>
-				</Toolbar>
-			</AppBar>
+			<ThemeProvider theme={theme}>
+				<div class="diagonal-box">
+					<div class="content">
+						<AppBar position="dynamic">
+							<Box
+								display="flex"
+								justifyContent="flex-end"
+								paddingRight="12%"
+							>
+								<Toolbar>
+									<IconButton color="inherit" href="/">
+										<HomeIcon />
+									</IconButton>
+									<IconButton
+										color="inherit"
+										href="https://github.com/xascrimson"
+									>
+										<GitHub />
+									</IconButton>
+									<IconButton
+										color="inherit"
+										href="/Portfolio"
+									>
+										<ShowChart />
+									</IconButton>
 
-			{/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-			<Switch>
-				<Route path="/about">
-					<About />
-				</Route>
-				<Route path="/users">
-					<Users />
-				</Route>
+									<IconButton color="inherit">
+										<Info />
+									</IconButton>
+								</Toolbar>
+							</Box>
+						</AppBar>
 
-				<Route path="/Danny">
-					<Danny />
-				</Route>
+						<br />
+						<Container maxWidth="xlg">
+							<Grid container>
+								<Grid container xs={4}>
+									<Grid item sm={9}>
+										<Grow
+											in={true}
+											style={{ transformOrigin: "1 2 1" }}
+											timeout={2000}
+										>
+											<img
+												src={myPhoto}
+												className="myPhoto"
+												width="80%"
+											/>
+										</Grow>
+										<br />
+										<WritingArea raised ={true}> Hello and welcome to my personal website</WritingArea>
+									</Grid>
+									<Grid item sm={1}>
+										<Divider
+											orientation="vertical"
+											variant="middle"
+										/>
+									</Grid>
+								</Grid>
 
-				<Route path="/">
-					<Blog />
-				</Route>
-			</Switch>
+								<Switch>
+									<Route path="/about">
+										<About />
+									</Route>
+									<Route path="/Portfolio">
+										<Users />
+									</Route>
+
+									<Route path="/Danny">
+										<Danny />
+									</Route>
+
+									<Route path="/">
+										<Home />
+									</Route>
+								</Switch>
+							</Grid>
+						</Container>
+					</div>
+				</div>
+			</ThemeProvider>
 		</Router>
 	);
-}
-
-function About() {
-	return <h2>About</h2>;
 }
 
 function Users() {
