@@ -18,6 +18,6 @@ color: white;
 export const WritingArea = styled(C)`
     max-width:100%;
     display: flex;
-    height: 50%;
+    height: 56%;
 
 `;

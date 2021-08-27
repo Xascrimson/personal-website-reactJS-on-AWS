@@ -19,6 +19,9 @@ import myPhoto from "./linkedinimage.jpg";
 import { AppBar,WritingArea } from "./styles";
 import About from "./about";
 import { Card} from '@material-ui/core';
+import cloud_prac from "./cloud_prac.png";
+import SAA from "./SAA.png";
+
 
 
 export default function App() {
@@ -91,7 +94,26 @@ export default function App() {
 											/>
 										</Grow>
 										<br />
-										<WritingArea raised ={true}> Hello and welcome to my personal website</WritingArea>
+										<WritingArea raised ={true}>
+											<div>
+											Hello I'm Danny a Junior Cloud (Software) Engineer working at National Australia Bank and welcome to my personal website. <br/> <br/>
+											 I'm currently building this out, so a couple of links are coming soon, but stay tuned! <br/>
+											The website you are viewing is currently written in ReactJS framework deployed on AWS Elastic Container Service(ECS) with docker and Nginx.<br/>
+											Routing is done using react-router to navigate between components.<br/>
+											Animiation utilises framer-motion package.<br/>
+											<img
+												src={SAA}
+												className="SAA"
+												width="30%"
+											/>
+											<img
+												src={cloud_prac}
+												className="cloud_prac"
+												width="30%"
+											/>
+											</div>
+											 </WritingArea>
+
 									</Grid>
 									<Grid item sm={1}>
 										<Divider

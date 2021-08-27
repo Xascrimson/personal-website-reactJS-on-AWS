@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { Card, Title } from "./styles";
 import { motion, MotionConfig } from "framer-motion";
-
+import DannyHuang_CV from './DannyHuang_CV.pdf'
 // const CardColor = styled.Card`
 //   font-size: 1.5em;
 //   text-align: center;
@@ -51,7 +51,9 @@ export default function Home(props) {
 								</Typography>
 							</CardContent>
 							<CardActions>
+							<a href={DannyHuang_CV} download ='Danny Huang CV'>
 								<Button size="small">Download</Button>
+								</a>
 							</CardActions>
 						</Card>
 					</motion.div>
