@@ -51,7 +51,7 @@ export default function Home(props) {
 								</Typography>
 							</CardContent>
 							<CardActions>
-							<a href={DannyHuang_CV} download ='Danny Huang CV'>
+							<a href={DannyHuang_CV} download ='Danny Huang CV.pdf'>
 								<Button size="small">Download</Button>
 								</a>
 							</CardActions>
