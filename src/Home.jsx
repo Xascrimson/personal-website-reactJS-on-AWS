@@ -47,7 +47,7 @@ export default function Home(props) {
 									Resume
 								</Title>
 								<Typography variant="h6">
-									My current resume as of 24/08/2021 TETST TEST 
+									My current resume as of 24/08/2021
 								</Typography>
 							</CardContent>
 							<CardActions>
