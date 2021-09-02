@@ -12,7 +12,6 @@ min-width: 200px;
 `;
 
 export const AppBar = styled(A)`
-padding-top:0px;
 color: white;
 `;
 
