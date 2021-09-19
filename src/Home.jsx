@@ -3,7 +3,8 @@ import React from "react";
 import { HashLink } from "react-router-hash-link";
 import myPhoto from "./images/linkedinimage.jpg";
 import DannyHuang_CV from "./DannyHuang_CV.pdf";
-
+import cloud_prac from "./images/cloud_prac.png";
+import SAA from "./images/SAA.png";
 export default function Home(props) {
 	return (
 		<section class={"intro"}>
@@ -17,10 +18,9 @@ export default function Home(props) {
 						Hi I'm Danny - Junior Cloud (Software) Engineer -
 						currently working at National Australia Bank (NAB) and
 						welcome to my personal website. <br /> <br />
-						I'm currently building the website out, so a couple of links
-						are coming soon, but stay tuned!  <br /> <br />
+						I'm currently building the website out, so a couple of
+						links are coming soon, but stay tuned! <br /> <br />
 						Navigate below the links to learn more
-
 					</Typography>
 
 					<Grid container>
@@ -128,6 +128,8 @@ export default function Home(props) {
 					>
 						<img src={myPhoto} class={"myPhoto"} width="100%" />
 					</Grow>
+					<img src={SAA} className="SAA" width="30%" />
+					<img src={cloud_prac} className="cloud_prac" width="30%" />
 				</Grid>
 			</Grid>
 		</section>
