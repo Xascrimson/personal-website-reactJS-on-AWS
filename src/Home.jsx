@@ -7,7 +7,7 @@ import cloud_prac from "./images/cloud_prac.png";
 import SAA from "./images/SAA.png";
 export default function Home(props) {
 	return (
-		<section class={"intro"}>
+		<section class={"intro"} id="intro">
 			<Grid container justifyContent="space-between" spacing={1}>
 				<Grid item xs={8}>
 					<Typography variant="h3">

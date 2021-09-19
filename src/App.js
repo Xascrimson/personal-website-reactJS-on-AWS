@@ -17,6 +17,8 @@ import About from "./about";
 import { AppBar } from "./styles";
 import WebsiteArchitecture from "./WebsiteArchitecture";
 import StockPortfolio from "./StockPortfolio";
+import { HashLink } from "react-router-hash-link";
+
 export default function App() {
 	let theme = createTheme({
 		typography: {
@@ -58,22 +60,34 @@ export default function App() {
 								paddingRight="12%"
 							>
 								<Toolbar>
-									<IconButton color="inherit" href="/">
+								<HashLink
+										smooth
+										to="#intro"
+										style={{
+											color: "white",
+										}}
+									>
+									<IconButton color="inherit" >
 										<HomeIcon />
 									</IconButton>
+									</HashLink>
 									<IconButton
 										color="inherit"
 										href="https://github.com/xascrimson"
 									>
 										<GitHub />
 									</IconButton>
-									<IconButton
-										color="inherit"
-										href="/Portfolio"
+									<HashLink
+										smooth
+										to="#stock"
+										style={{
+											color: "white",
+										}}
 									>
-										<ShowChart />
-									</IconButton>
-
+										<IconButton color="inherit">
+											<ShowChart />
+										</IconButton>
+									</HashLink>
 									<IconButton color="inherit">
 										<Info />
 									</IconButton>
@@ -90,7 +104,7 @@ export default function App() {
 
 						<WebsiteArchitecture />
 
-						<div id= "stock" class="spacer layer3" />
+						<div id="stock" class="spacer layer3" />
 
 						<StockPortfolio />
 					</div>
