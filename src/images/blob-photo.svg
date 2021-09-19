@@ -1,0 +1,23 @@
+<svg
+  id="visual"
+  viewBox="0 0 900 600"
+  width="900"
+  height="600"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  version="1.1"
+>
+  <rect x="0" y="0" width="900" height="600" fill="#042f5a"></rect>
+  <g transform="translate(456.34814167644015 307.37703666978575)">
+   <defs>   
+  <clipPath id="theClippingPath" > 
+    <path
+      d="M227.1 -189.7C272.8 -123.8 273.5 -30.6 252.6 56.3C231.7 143.2 189.2 223.9 121.1 259.8C53.1 295.8 -40.5 287.1 -111.9 247.1C-183.3 207 -232.5 135.7 -259 50.3C-285.6 -35.1 -289.4 -134.4 -242.4 -200.7C-195.5 -266.9 -97.7 -299.9 -3.5 -297.1C90.7 -294.3 181.4 -255.6 227.1 -189.7"
+      fill="#fff"
+    ></path>
+     </clipPath> 
+  </defs> 
+  <image xlink:href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/222579/beagle400.jpg" height="485" width="485" clip-path="url(#theClippingPath)"></image>
+
+  </g>
+</svg>;
