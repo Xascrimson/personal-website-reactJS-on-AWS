@@ -1,44 +1,50 @@
 import {
-	Container,
+	Box,
 	createTheme,
-	Divider,
 	Grid,
-	Grow,
+	IconButton,
+	responsiveFontSizes,
 	ThemeProvider,
 	Toolbar,
 	Typography,
-	IconButton,
-	Box,
 } from "@material-ui/core";
 import { GitHub, Info, ShowChart } from "@material-ui/icons";
 import HomeIcon from "@material-ui/icons/Home";
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import Home from "./Home";
-import myPhoto from "./linkedinimage.jpg";
-import { AppBar, WritingArea } from "./styles";
 import About from "./about";
-import { Card } from "@material-ui/core";
-import cloud_prac from "./cloud_prac.png";
-import SAA from "./SAA.png";
-
+import { AppBar } from "./styles";
+import WebsiteArchitecture from "./WebsiteArchitecture";
+import StockPortfolio from "./StockPortfolio";
 export default function App() {
-	const theme = createTheme({
+	let theme = createTheme({
+		typography: {
+			fontFamily: "Urbanist, sans-serif",
+
+			body1: {
+				fontSize: "1.2rem",
+			},
+			h3: {
+				fontFamily: "Permanent Marker, cursive",
+			},
+		},
 		palette: {
 			primary: {
-				main: "#3f51b5",
-				light: "#6573c3",
-				dark: "#2c387e",
+				main: "#004162",
+				light: "#336781",
+				dark: "#002d44",
 				contrastText: "#fff",
 			},
 			secondary: {
-				main: "#2196f3",
-				light: "#6ec6ff",
-				dark: "#0069c0",
+				main: "#0066FF",
+				light: "#3384ff",
+				dark: "#0047b2",
 				contrastText: "#fff",
 			},
 		},
 	});
+	theme = responsiveFontSizes(theme);
 
 	return (
 		<Router>
@@ -74,86 +80,19 @@ export default function App() {
 								</Toolbar>
 							</Box>
 						</AppBar>
+						{/* https://app.haikei.app/ */}
+						<Home />
 
-						<br />
-						<Container maxWidth="xlg">
-							<Grid container>
-								<Grid container xs={4}>
-									<Grid item sm={9}>
-										<Grow
-											in={true}
-											style={{ transformOrigin: "1 2 1" }}
-											timeout={2000}
-										>
-											<img
-												src={myPhoto}
-												className="myPhoto"
-												width="80%"
-											/>
-										</Grow>
-										<br />
-										<WritingArea raised={true}>
-											<div>
-												Hello I'm Danny a Junior Cloud
-												(Software) Engineer working at
-												National Australia Bank and
-												welcome to my personal website.{" "}
-												<br /> <br />
-												I'm currently building this out,
-												so a couple of links are coming
-												soon, but stay tuned! <br />
-												The website you are viewing is
-												currently written in ReactJS
-												framework deployed on AWS
-												Elastic Container Service(ECS)
-												with docker and Nginx.
-												<br />
-												Routing is done using
-												react-router to navigate between
-												components.
-												<br />
-												Animiation utilises
-												framer-motion package.
-												<br />
-												<img
-													src={SAA}
-													className="SAA"
-													width="30%"
-												/>
-												<img
-													src={cloud_prac}
-													className="cloud_prac"
-													width="30%"
-												/>
-											</div>
-										</WritingArea>
-									</Grid>
-									<Grid item sm={1}>
-										<Divider
-											orientation="vertical"
-											variant="middle"
-										/>
-									</Grid>
-								</Grid>
+						<div id="aboutMe" class="spacer layer1" />
+						<About />
 
-								<Switch>
-									<Route path="/about">
-										<About />
-									</Route>
-									<Route path="/Portfolio">
-										<Users />
-									</Route>
+						<div id="websiteArchitecture" class="spacer layer2" />
 
-									<Route path="/Danny">
-										<Danny />
-									</Route>
+						<WebsiteArchitecture />
 
-									<Route path="/">
-										<Home />
-									</Route>
-								</Switch>
-							</Grid>
-						</Container>
+						<div id= "stock" class="spacer layer3" />
+
+						<StockPortfolio />
 					</div>
 				</div>
 			</ThemeProvider>

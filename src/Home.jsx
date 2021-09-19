@@ -1,241 +1,135 @@
-import {
-	Button,
-	CardActions,
-	CardContent,
-	Grid,
-	Typography,
-} from "@material-ui/core";
+import { Grid, Grow, Typography } from "@material-ui/core";
 import React from "react";
-import { Card, Title } from "./styles";
-import { motion, MotionConfig } from "framer-motion";
-import DannyHuang_CV from './DannyHuang_CV.pdf'
-// const CardColor = styled.Card`
-//   font-size: 1.5em;
-//   text-align: center;
-//   color: palevioletred;
-// `;
-
-// // Create a Title component that'll render an <h1> tag with some styles
-// const Title = styled.h1`
-//   font-size: 1.5em;
-//   text-align: center;
-//   color: palevioletred;
-// `;
+import { HashLink } from "react-router-hash-link";
+import myPhoto from "./images/linkedinimage.jpg";
+import DannyHuang_CV from "./DannyHuang_CV.pdf";
 
 export default function Home(props) {
-	// const classes = useStyles();
-	// const { posts, title } = props;
-
 	return (
-		<Grid container xs={8}>
-			<Grid container justifyContent="space-around">
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1.2, 1, 1, 1, 1, 1, 1],
-							opacity: [0, 0, 1, 1, 1, 1, 1, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
-					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									Resume
-								</Title>
-								<Typography variant="h6">
-									My current resume as of 24/08/2021
-								</Typography>
-							</CardContent>
-							<CardActions>
-							<a href={DannyHuang_CV} download ='Danny Huang CV.pdf'>
-								<Button size="small">Download</Button>
-								</a>
-							</CardActions>
-						</Card>
-					</motion.div>
-				</Grid>
+		<section class={"intro"}>
+			<Grid container justifyContent="space-between" spacing={1}>
+				<Grid item xs={8}>
+					<Typography variant="h3">
+						Welcome to my personal website
+					</Typography>
+					<br />
+					<Typography>
+						Hi I'm Danny - Junior Cloud (Software) Engineer -
+						currently working at National Australia Bank (NAB) and
+						welcome to my personal website. <br /> <br />
+						I'm currently building the website out, so a couple of links
+						are coming soon, but stay tuned!  <br /> <br />
+						Navigate below the links to learn more
 
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1, 1.2, 1, 1, 1, 1, 1],
-							opacity: [0, 0, 0, 1, 1, 1, 1, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
+					</Typography>
+
+					<Grid container>
+						<Grid item xs={6}>
+							<ul>
+								<li>
+									<HashLink
+										smooth
+										to="#aboutMe"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										About Me
+									</HashLink>
+								</li>
+								<br />
+								<li>
+									<a
+										href={DannyHuang_CV}
+										download="Danny Huang CV.pdf"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Resume
+									</a>
+								</li>
+								<br />
+								<li>
+									<HashLink
+										smooth
+										to="#websiteArchitecture"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Website Architecture
+									</HashLink>
+								</li>
+								<br />
+								<li>
+									<HashLink
+										smooth
+										to="#stock"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Algorithmic Trading Stock Portfolio
+									</HashLink>
+								</li>
+							</ul>
+						</Grid>
+						<Grid item xs={6}>
+							<ul>
+								<li>
+									<a
+										href="https://github.com/xascrimson"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Github
+									</a>
+								</li>
+								<br />
+								<li>
+									<a
+										href="https://www.linkedin.com/in/danny-huang-471220159/"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Linkedin
+									</a>
+								</li>
+								<br />
+								<li>
+									<a
+										href="https://medium.com/@dannyhuangNZ"
+										style={{
+											textDecoration: "none",
+											color: "white",
+										}}
+									>
+										Medium
+									</a>
+								</li>
+							</ul>
+						</Grid>
+					</Grid>
+				</Grid>
+				<Grid item xs={4}>
+					<Grow
+						in={true}
+						style={{ transformOrigin: "1 2 1" }}
+						timeout={2000}
 					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									Algorithmic Trading Stock Portfolio
-								</Title>
-								<Typography variant="h6">
-									Discussions on market neutral strategies
-								</Typography>
-							</CardContent>
-							<CardActions>
-								<Button size="small">Learn More</Button>
-							</CardActions>
-						</Card>
-					</motion.div>
+						<img src={myPhoto} class={"myPhoto"} width="100%" />
+					</Grow>
 				</Grid>
 			</Grid>
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<Grid container justifyContent="space-around">
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1, 1, 1.2, 1, 1, 1, 1],
-							opacity: [0, 0, 0, 0, 1, 1, 1, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
-					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									Medium Articles
-								</Title>
-								<Typography variant="h6">
-									Here lies all medium articles from my side
-									projects
-								</Typography>
-							</CardContent>
-							<CardActions>
-								<Button
-									size="small"
-									href="https://medium.com/@dannyhuangNZ"
-								>
-									Take me over
-								</Button>
-							</CardActions>
-						</Card>
-					</motion.div>
-				</Grid>
-
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1.2, 1, 1, 1.2, 1, 1, 1],
-							opacity: [0, 0, 0, 0, 0, 1, 1, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
-					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									Github
-								</Title>
-								<Typography variant="h6">
-									Where all my personal github projects lies
-								</Typography>
-							</CardContent>
-							<CardActions>
-								<Button
-									size="small"
-									href="https://github.com/xascrimson"
-								>
-									Take me over
-								</Button>
-							</CardActions>
-						</Card>
-					</motion.div>
-				</Grid>
-			</Grid>
-
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<br />
-			<Grid container justifyContent="space-around">
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1.2, 1, 1, 1, 1.2, 1, 1],
-							opacity: [0, 0, 0, 0, 0, 0, 1, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
-					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									About Me
-								</Title>
-								<Typography variant="h6">
-									Quality discussions of my personal interests
-									& professional life
-								</Typography>
-							</CardContent>
-							<CardActions>
-								<Button size="small">Learn More</Button>
-							</CardActions>
-						</Card>
-					</motion.div>
-				</Grid>
-				<Grid item>
-					<motion.div
-						animate={{
-							scale: [1, 1.2, 1, 1, 1, 1.2, 1.2, 1],
-							opacity: [0, 0, 0, 0, 0, 0, 0, 1],
-						}}
-						transition={{
-							duration: 3,
-							ease: "easeInOut",
-							times: [1],
-						}}
-					>
-						<Card raised={true}>
-							<CardContent>
-								<Title color="textSecondary" gutterBottom>
-									Website Architecture
-								</Title>
-								<Typography variant="h6">
-									Discussions on solution architecture for
-									this ReactJS website deployed on ECS
-								</Typography>
-							</CardContent>
-							<CardActions>
-								<Button size="small">Learn More</Button>
-							</CardActions>
-						</Card>
-					</motion.div>
-				</Grid>
-			</Grid>
-		</Grid>
+		</section>
 	);
 }
