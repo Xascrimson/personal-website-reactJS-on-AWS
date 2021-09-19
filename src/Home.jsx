@@ -19,12 +19,8 @@ export default function Home(props) {
 						welcome to my personal website. <br /> <br />
 						I'm currently building the website out, so a couple of links
 						are coming soon, but stay tuned!  <br /> <br />
-						Navigate below to learn more
-						{/* I'm currently building this out, so a couple of links
-						are coming soon, but stay tuned! <br />
-						The website you are viewing is currently written in
-						ReactJS framework deployed on AWS Elastic Container
-						Service(ECS) with docker and Nginx. */}
+						Navigate below the links to learn more
+
 					</Typography>
 
 					<Grid container>
