@@ -21,12 +21,12 @@ export function ContactInfo({ open, onClose }) {
 					</ListItemButton>
 				</ListItem>
 				<ListItem>
-					<ListItemButton>
+					<ListItem>
 						<ListItemIcon>
 							<Phone />
 						</ListItemIcon>
 						+61 452504531
-					</ListItemButton>
+					</ListItem>
 				</ListItem>
 			</List>
 		</Dialog>
