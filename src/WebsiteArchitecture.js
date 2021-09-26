@@ -16,6 +16,20 @@ export default function WebsiteArchitecture(props) {
 					<Grid item xs={12}>
 						<Grid Container>
 							<Typography>
+								The website is built in a React framework.
+							</Typography>
+							<Typography>
+								Packages used:
+								<ul>
+									<li>Material UI: React UI library</li>
+									<li>
+										React-Router-Hash-Link: for
+										scrollability between sections
+									</li>
+								</ul>
+							</Typography>
+							<br />
+							<Typography>
 								Initially the website architecture was
 								containerised with Docker and hosted on AWS
 								Elastic Container Service (ECS) with an

@@ -1,23 +1,22 @@
 import {
 	Box,
 	createTheme,
-	Grid,
 	IconButton,
 	responsiveFontSizes,
 	ThemeProvider,
 	Toolbar,
-	Typography,
 } from "@material-ui/core";
 import { GitHub, Info, ShowChart } from "@material-ui/icons";
 import HomeIcon from "@material-ui/icons/Home";
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Home from "./Home";
+import { HashLink } from "react-router-hash-link";
 import About from "./about";
+import { ContactInfo } from "./ContactMe";
+import Home from "./Home";
+import StockPortfolio from "./StockPortfolio";
 import { AppBar } from "./styles";
 import WebsiteArchitecture from "./WebsiteArchitecture";
-import StockPortfolio from "./StockPortfolio";
-import { HashLink } from "react-router-hash-link";
 
 export default function App() {
 	let theme = createTheme({
@@ -48,6 +47,16 @@ export default function App() {
 	});
 	theme = responsiveFontSizes(theme);
 
+	const [open, setOpen] = useState(false);
+
+	const handleClickOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
+
 	return (
 		<Router>
 			<ThemeProvider theme={theme}>
@@ -60,16 +69,16 @@ export default function App() {
 								paddingRight="12%"
 							>
 								<Toolbar>
-								<HashLink
+									<HashLink
 										smooth
 										to="#intro"
 										style={{
 											color: "white",
 										}}
 									>
-									<IconButton color="inherit" >
-										<HomeIcon />
-									</IconButton>
+										<IconButton color="inherit">
+											<HomeIcon />
+										</IconButton>
 									</HashLink>
 									<IconButton
 										color="inherit"
@@ -88,9 +97,14 @@ export default function App() {
 											<ShowChart />
 										</IconButton>
 									</HashLink>
+
 									<IconButton color="inherit">
-										<Info />
+										<Info onClick={handleClickOpen} />
 									</IconButton>
+									<ContactInfo
+										open={open}
+										onClose={handleClose}
+									/>
 								</Toolbar>
 							</Box>
 						</AppBar>
@@ -114,10 +128,3 @@ export default function App() {
 	);
 }
 
-function Users() {
-	return <h2>Users</h2>;
-}
-
-function Danny() {
-	return <h2> hello danny</h2>;
-}

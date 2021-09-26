@@ -1,9 +1,11 @@
 import { Grid, Grow, Typography } from "@material-ui/core";
 import React from "react";
 import { HashLink } from "react-router-hash-link";
-import myPhoto from "./images/linkedinimage.jpg";
+import ContactMe from "./ContactMe";
 import DannyHuang_CV from "./DannyHuang_CV.pdf";
 import cloud_prac from "./images/cloud_prac.png";
+import myPhoto from "./images/linkedinimage.jpg";
+import ML from "./images/ML.png";
 import SAA from "./images/SAA.png";
 export default function Home(props) {
 	return (
@@ -31,7 +33,6 @@ export default function Home(props) {
 										smooth
 										to="#aboutMe"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -44,7 +45,6 @@ export default function Home(props) {
 										href={DannyHuang_CV}
 										download="Danny Huang CV.pdf"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -57,7 +57,6 @@ export default function Home(props) {
 										smooth
 										to="#websiteArchitecture"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -70,7 +69,6 @@ export default function Home(props) {
 										smooth
 										to="#stock"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -85,7 +83,6 @@ export default function Home(props) {
 									<a
 										href="https://github.com/xascrimson"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -97,7 +94,6 @@ export default function Home(props) {
 									<a
 										href="https://www.linkedin.com/in/danny-huang-471220159/"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
@@ -109,12 +105,15 @@ export default function Home(props) {
 									<a
 										href="https://medium.com/@dannyhuangNZ"
 										style={{
-											textDecoration: "none",
 											color: "white",
 										}}
 									>
 										Medium
 									</a>
+								</li>
+								<br />
+								<li>
+									<ContactMe />
 								</li>
 							</ul>
 						</Grid>
@@ -128,6 +127,7 @@ export default function Home(props) {
 					>
 						<img src={myPhoto} class={"myPhoto"} width="100%" />
 					</Grow>
+					<img src={ML} className="ML" width="30%" />
 					<img src={SAA} className="SAA" width="30%" />
 					<img src={cloud_prac} className="cloud_prac" width="30%" />
 				</Grid>
