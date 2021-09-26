@@ -4,14 +4,16 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import React, { useState } from "react";
 
-
 export function ContactInfo({ open, onClose }) {
 	return (
 		<Dialog onClose={onClose} open={open}>
 			<DialogTitle>Contact Details</DialogTitle>
 			<List sx={{ pt: 20 }}>
 				<ListItem>
-					<ListItemButton>
+					<ListItemButton
+						component="a"
+						href="mailto:dannyhuang1234@gmail.com"
+					>
 						<ListItemIcon>
 							<Email />
 						</ListItemIcon>
@@ -26,7 +28,6 @@ export function ContactInfo({ open, onClose }) {
 						+61 452504531
 					</ListItemButton>
 				</ListItem>
-                
 			</List>
 		</Dialog>
 	);
