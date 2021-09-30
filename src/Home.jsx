@@ -17,7 +17,7 @@ export default function Home(props) {
 					</Typography>
 					<br />
 					<Typography>
-						Hi I'm Danny - Junior Cloud (Software) Engineer -
+						Hi I'm Danny - Associate Cloud (Software) Engineer (Mid-level) -
 						currently working at National Australia Bank (NAB) and
 						welcome to my personal website. <br /> <br />
 						I'm currently building the website out, so a couple of
