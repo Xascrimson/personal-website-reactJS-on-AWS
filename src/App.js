@@ -24,7 +24,7 @@ export default function App() {
 			fontFamily: "Urbanist, sans-serif",
 
 			body1: {
-				fontSize: "1.2rem",
+				fontSize: "20px",//"1.2rem",
 			},
 			h3: {
 				fontFamily: "Permanent Marker, cursive",
